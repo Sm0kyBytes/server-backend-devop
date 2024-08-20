@@ -2,9 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import connectionPool from "./utils/db.mjs";
+import "dotenv/config";
 
 const app = express();
-const port = 4000;
+const port = `${process.env.APP_PORT}`;
 
 app.use(express.json());
 app.use(cors({ origin: true }));
